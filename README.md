@@ -147,3 +147,7 @@ print_productsearch_titles($result);
 //...
 //When $result is null, there are no more results available.
 ```
+
+License
+------------------
+The code of this repository is published under the GPLv2+ license

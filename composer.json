@@ -1,0 +1,23 @@
+{
+    "name": "webhose/webhoseio-php",
+    "description": "Webhose.io PHP SDK",
+    "homepage": "https://github.com/Webhose/webhoseio-PHP",
+    "version": "1.0",
+    "type": "library",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Webhose.io",
+            "email": "webhose-support@webhose.io",
+            "homepage": "https://webhose.io/"
+        }
+    ],
+    "require": {
+    	"php": "^5.4|^7.0",
+    	"ext-curl": "*",
+    	"ext-libxml": "*"
+    },
+    "autoload": {
+        "files": ["webhose.php"]
+    }
+}
