@@ -8,9 +8,9 @@ A simple way to access the [Webhose.io](https://webhose.io) API from your PHP co
 // API Key from: https://webhose.io/dashboard
 Webhose::config("API_KEY");
 
-//Perform a "filterWebData" query using "United States" as our keywords.
+//Perform a "filterWebContent" query using "United States" as our keywords.
 $params = array("q"=>"United States", "size"=>"3");
-$result = Webhose::query("filterWebData", $params);
+$result = Webhose::query("filterWebContent", $params);
 
 //Fetch the next results using the same terms.
 $result = Webhose::get_next();
@@ -44,9 +44,9 @@ Webhose::config("API_KEY");
 **API Endpoints**
 
 The first parameter the query() function accepts is the API endpoint string. Available endpoints:
-* filterWebData - access to the news/blogs/forums/reviews API
-* productSearch - access to data about eCommerce products/services
-* darkWebAPI - access to the dark web (coming soon)
+* filterWebContent - access to the news/blogs/forums/reviews API
+* productFilter - access to data about eCommerce products/services
+* darkFilter - access to the dark web (coming soon)
 
 Now you can make a request and inspect the results:
 
@@ -66,9 +66,9 @@ function print_filterwebdata_titles($api_response)
         }
 }
 
-//Perform a "filterWebData" query using "United States" as our keywords.
+//Perform a "filterWebContent" query using "United States" as our keywords.
 $params = array("q"=>"United States", "size"=>"3");
-$result = Webhose::query("filterWebData", $params);
+$result = Webhose::query("filterWebContent", $params);
 print_filterwebdata_titles($result);
 ```
 
@@ -78,7 +78,7 @@ You can traverse the structure as you would any PHP array:
 //Print more detailed information about the article:
 
 $params = array("q"=>"United States", "size"=>"1");
-$result = Webhose::query("filterWebData", $params);
+$result = Webhose::query("filterWebContent", $params);
 
 foreach($result->posts as $post)
 {
@@ -114,9 +114,9 @@ Full documentation
 * ``Webhose::query(end_point_str, params)``
 
   * end_point_str
-    * filterWebData - access to the news/blogs/forums/reviews API
-    * productSearch - access to data about eCommerce products/services
-    * darkWebAPI - access to the dark web (coming soon)
+    * filterWebContent - access to the news/blogs/forums/reviews API
+    * productFilter - access to data about eCommerce products/services
+    * darkFilter - access to the dark web (coming soon)
   * params: A key value dictionary. [Read about the available parameters](https://webhose.io/documentation).
 
 * ``Webhose::get_next()`` - Fetches the next page of results using the same parameters.
@@ -132,9 +132,9 @@ Polling
 It is possible to continue a search to fetch more results using the same parameters:
 
 ```php
-//Perform a "productSearch" query using "United Kingdom" as our keywords.
+//Perform a "productFilter" query using "United Kingdom" as our keywords.
 $params = array("q"=>"United Kingdom", "size"=>"1");
-$result = Webhose::query("productSearch", $params);
+$result = Webhose::query("productFilter", $params);
 print_productsearch_titles($result);
 
 //Fetch the next results using the same terms.
