@@ -18,6 +18,8 @@
     	"ext-libxml": "*"
     },
     "autoload": {
-        "files": ["webhose.php"]
+        "psr-4": {
+            "webhose\\webhoseio\\": "webhose.php"
+        }
     }
 }
