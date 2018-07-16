@@ -1,5 +1,7 @@
 <?php
 
+namespace webhose\webhoseio;
+
 class Webhose
 {
     private static $API_URL = "http://webhose.io";
@@ -29,7 +31,7 @@ class Webhose
      */
     private static function fetch_request($query_url)
     {
-        if(self::$ECHO_REQUEST_URL)
+        if (self::$ECHO_REQUEST_URL)
             echo "<p>" . $query_url . "</p>";
 
         $curl = curl_init($query_url);
@@ -60,10 +62,10 @@ class Webhose
      */
     public static function query($type, $param_dict)
     {
-        if(self::$API_KEY == null) return null;
+        if (self::$API_KEY == null) return null;
         $queryURL = self::$API_URL . sprintf(self::$API_URL_PARAMS, $type, self::$API_KEY);
 
-        foreach($param_dict as $key=> $value)
+        foreach ($param_dict as $key => $value)
             $queryURL .= sprintf("&%s=%s", $key, urlencode($value));
 
         return self::fetch_request($queryURL);
@@ -74,8 +76,8 @@ class Webhose
      */
     public static function get_next()
     {
-        if(self::$API_KEY == null) return null;
-        if(self::$NEXT == null) return null;
+        if (self::$API_KEY == null) return null;
+        if (self::$NEXT == null) return null;
         return self::fetch_request(self::$NEXT);
     }
 }
