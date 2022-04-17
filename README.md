@@ -117,7 +117,7 @@ Full documentation
     * filterWebContent - access to the news/blogs/forums/reviews API
     * productFilter - access to data about eCommerce products/services
     * darkFilter - access to the dark web (coming soon)
-  * params: A key value dictionary. [Read about the available parameters](https://api.webz.io/documentation).
+  * params: A key value dictionary. [Read about the available parameters](https://docs.webz.io/).
 
 * ``Webz::get_next()`` - Fetches the next page of results using the same parameters.
 
@@ -150,4 +150,4 @@ print_productsearch_titles($result);
 
 License
 ------------------
-The code of this repository is published under the GPLv2+ license
+The code of this repository is published under the MIT license
