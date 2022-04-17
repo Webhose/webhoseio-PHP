@@ -1,8 +1,8 @@
 <?php
 
-class Webhose
+class Webz
 {
-    private static $API_URL = "http://webhose.io";
+    private static $API_URL = "https://api.webz.io";
     private static $API_URL_PARAMS = "/%s?format=json&token=%s";
     private static $API_KEY = null;
     private static $ECHO_REQUEST_URL = false;
