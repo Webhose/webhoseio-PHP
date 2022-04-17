@@ -1,15 +1,15 @@
 {
-    "name": "webhose/webhoseio-php",
-    "description": "Webhose.io PHP SDK",
+    "name": "webz/webzio-php",
+    "description": "Webz.io PHP SDK",
     "homepage": "https://github.com/Webhose/webhoseio-PHP",
     "version": "1.0",
     "type": "library",
     "license": "GPL-2.0+",
     "authors": [
         {
-            "name": "Webhose.io",
-            "email": "webhose-support@webhose.io",
-            "homepage": "https://webhose.io/"
+            "name": "Webz.io",
+            "email": "webz-support@webz.io",
+            "homepage": "https://webz.io/"
         }
     ],
     "require": {
@@ -18,6 +18,6 @@
     	"ext-libxml": "*"
     },
     "autoload": {
-        "files": ["webhose.php"]
+        "files": ["webz.php"]
     }
 }

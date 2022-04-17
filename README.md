@@ -1,30 +1,30 @@
 
-webhose.io client for PHP
+webz.io client for PHP
 ============================
 
-A simple way to access the [Webhose.io](https://webhose.io) API from your PHP code:
+A simple way to access the [Webz.io](https://webz.io) API from your PHP code:
 
 ```php
-// API Key from: https://webhose.io/dashboard
-Webhose::config("API_KEY");
+// API Key from: https://webz.io/dashboard
+Webz::config("API_KEY");
 
 //Perform a "filterWebContent" query using "United States" as our keywords.
 $params = array("q"=>"United States", "size"=>"3");
-$result = Webhose::query("filterWebContent", $params);
+$result = Webz::query("filterWebContent", $params);
 
 //Fetch the next results using the same terms.
-$result = Webhose::get_next();
+$result = Webz::get_next();
 ```
 API Key
 -------
 
-To make use of the webhose.io API, you'll need an API key.
+To make use of the webz.io API, you'll need an API key.
 
 To get one, sign up at:
-https://webhose.io/auth/signup
+https://webz.io/auth/signup
 
 And your key will be available here:
-https://webhose.io/dashboard
+https://webz.io/dashboard
 
 
 Usage
@@ -33,10 +33,10 @@ Usage
 To get started, you'll need to import the class and configure it with your API key:
 
 ```php
-require_once('webhose.php');
+require_once('webz.php');
 
-// API Key from: https://webhose.io/dashboard
-Webhose::config("API_KEY");
+// API Key from: https://webz.io/dashboard
+Webz::config("API_KEY");
 ```
 
 <br />
@@ -68,7 +68,7 @@ function print_filterwebdata_titles($api_response)
 
 //Perform a "filterWebContent" query using "United States" as our keywords.
 $params = array("q"=>"United States", "size"=>"3");
-$result = Webhose::query("filterWebContent", $params);
+$result = Webz::query("filterWebContent", $params);
 print_filterwebdata_titles($result);
 ```
 
@@ -78,7 +78,7 @@ You can traverse the structure as you would any PHP array:
 //Print more detailed information about the article:
 
 $params = array("q"=>"United States", "size"=>"1");
-$result = Webhose::query("filterWebContent", $params);
+$result = Webz::query("filterWebContent", $params);
 
 foreach($result->posts as $post)
 {
@@ -99,31 +99,31 @@ You can view the JSON in the browser to get a clearer picture of the return data
 In order to view the data in the browser, we can enable a debug flag to expose the URL fed to cURL:
 
 ```php
-//If true, echoes the parameterised Webhose API URL before executing request.
-Webhose::enable_debug(true);
+//If true, echoes the parameterised Webz API URL before executing request.
+Webz::enable_debug(true);
 ```
 
 
 Full documentation
 ------------------
 
-* ``Webhose::config(api_key)``
+* ``Webz::config(api_key)``
 
   * api_key - your API key
 
-* ``Webhose::query(end_point_str, params)``
+* ``Webz::query(end_point_str, params)``
 
   * end_point_str
     * filterWebContent - access to the news/blogs/forums/reviews API
     * productFilter - access to data about eCommerce products/services
     * darkFilter - access to the dark web (coming soon)
-  * params: A key value dictionary. [Read about the available parameters](https://webhose.io/documentation).
+  * params: A key value dictionary. [Read about the available parameters](https://api.webz.io/documentation).
 
-* ``Webhose::get_next()`` - Fetches the next page of results using the same parameters.
+* ``Webz::get_next()`` - Fetches the next page of results using the same parameters.
 
-* ``Webhose::enable_debug(debug_enabled)``
+* ``Webz::enable_debug(debug_enabled)``
 
-  * debug_enabled - boolean, If true, echoes the parameterised Webhose API URL before executing requests.
+  * debug_enabled - boolean, If true, echoes the parameterised Webz API URL before executing requests.
 
 
 Polling
@@ -134,14 +134,14 @@ It is possible to continue a search to fetch more results using the same paramet
 ```php
 //Perform a "productFilter" query using "United Kingdom" as our keywords.
 $params = array("q"=>"United Kingdom", "size"=>"1");
-$result = Webhose::query("productFilter", $params);
+$result = Webz::query("productFilter", $params);
 print_productsearch_titles($result);
 
 //Fetch the next results using the same terms.
-$result = Webhose::get_next();
+$result = Webz::get_next();
 print_productsearch_titles($result);
 
-$result = Webhose::get_next();
+$result = Webz::get_next();
 print_productsearch_titles($result);
 
 //...
