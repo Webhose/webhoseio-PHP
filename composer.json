@@ -2,9 +2,9 @@
     "name": "webz/webzio-php",
     "description": "Webz.io PHP SDK",
     "homepage": "https://github.com/Webhose/webhoseio-PHP",
-    "version": "1.0",
+    "version": "1.1",
     "type": "library",
-    "license": "GPL-2.0+",
+    "license": "MIT",
     "authors": [
         {
             "name": "Webz.io",
